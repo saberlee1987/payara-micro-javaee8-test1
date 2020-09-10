@@ -189,5 +189,20 @@ The following command shows all the pods created by this deployment.
 
 ```kubectl get pods```
  
+#Scaling a Deployment
+###You can scale a Deployment by using the following command:
+
+```kubectl scale deployment.v1.apps/nginx-deployment --replicas=10``` 
+####The output is similar to this: 
+```deployment.apps/nginx-deployment scaled```
  
+ ###Assuming horizontal Pod autoscaling is enabled in your cluster, you can setup an autoscaler for your Deployment and choose the minimum and maximum number of Pods you want to run based on the CPU utilization of your existing Pods.
+ 
+ ```kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80```
+
+####The output is similar to this:
+```deployment.apps/nginx-deployment scaled``` 
+ 
+ 
+Visit this link for deploy kubernetes  (https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
  
