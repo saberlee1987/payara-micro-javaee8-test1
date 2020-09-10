@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  labels:
+    app: test-deployment
+
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+       app: test-deployment
+  template:
+    metadata:
+      labels:
+        app: test-deployment
+    spec:
+      containers:
+        - name: payara-micro-javaee8-test1
+          image: saber66/payara-micro-javaee8-test1
+          ports:
+            - containerPort: 8080

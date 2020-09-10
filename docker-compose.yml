@@ -1,0 +1,16 @@
+version: "3.0"
+
+services:
+  payara-micro-javaee8-test1:
+    build:
+      context: .
+    image: payara-micro-javaee8-test1
+    ports:
+    - "8080:8080"
+    networks:
+    - jee8net
+   
+   
+networks:
+  jee8net:
+    internal: true
